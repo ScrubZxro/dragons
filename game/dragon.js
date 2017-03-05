@@ -1,4 +1,4 @@
-import { set, flow, snakeCase } from 'lodash'
+import { set, snakeCase } from 'lodash'
 import { creature } from './creature'
 
 const newDragon = size => name => dragon(size, name)

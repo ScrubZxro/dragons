@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { compose } from 'lodash/fp'
 
 const sizeMultiplier = size => {
   switch (size) {
@@ -18,6 +18,8 @@ const sizeMultiplier = size => {
 
 const attack = size => attackPower => sizeMultiplier(size) * attackPower
 
+const health = size => sizeMultiplier(size) * 100
+
 const creature = size => {
   return {
     size,
@@ -25,8 +27,6 @@ const creature = size => {
     attack: attack(size)
   }
 }
-
-const health = size => sizeMultiplier(size) * 100
 
 export  {
   creature
